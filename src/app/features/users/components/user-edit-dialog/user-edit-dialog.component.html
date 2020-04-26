@@ -1,0 +1,32 @@
+<div mat-dialog-content>
+
+  <h1>Edit user info</h1>
+
+  <form class="form-fields" [formGroup]="form" (ngSubmit)="handleEditSubmit(form.value)">
+    <mat-form-field>
+      <mat-label>First name</mat-label>
+      <input matInput required formControlName="firstName">
+      <mat-error *appValidationErrors="let error of form.controls.firstName">{{error}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Last name</mat-label>
+      <input matInput required formControlName="lastName">
+      <mat-error *appValidationErrors="let error of form.controls.lastName">{{error}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input matInput required formControlName="email">
+      <mat-error *appValidationErrors="let error of form.controls.email">{{error}}</mat-error>
+    </mat-form-field>
+
+    <button type="submit"
+            mat-button
+            color="primary"
+            [disabled]="!form.valid"
+    >
+      Update
+    </button>
+  </form>
+</div>

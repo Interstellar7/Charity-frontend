@@ -1,0 +1,16 @@
+<mat-toolbar color="primary">
+  <h1 routerLink="/" class="header-button">{{title}}</h1>
+
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <a mat-button routerLink="ads">Объявления</a>
+
+  <a mat-button routerLink="cabinet">Мой кабинет</a>
+
+  <div class="fill"></div>
+
+  <app-user-menu></app-user-menu>
+</mat-toolbar>
+
+<div>
+  <router-outlet></router-outlet>
+</div>

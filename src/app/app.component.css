@@ -1,0 +1,11 @@
+.content {
+  padding: 16px;
+}
+
+.header-button {
+  cursor: pointer;
+}
+
+.fill {
+  flex: 1;
+}

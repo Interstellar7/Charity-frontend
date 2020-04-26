@@ -1,0 +1,34 @@
+<div class="login-form-wrapper">
+  <form #form="ngForm"
+        class="login-form"
+        (ngSubmit)="handleLoginSubmit(form.value)">
+
+    <h1>Login</h1>
+
+    <div *ngIf="form.errors?.server === true" class="error mat-error">
+      Incorrect Login or Password!
+    </div>
+
+    <mat-form-field>
+      <mat-label>Login</mat-label>
+      <input matInput ngModel name="username" #loginControl="ngModel" required>
+      <!--    <mat-error *appValidationErrors="let error of loginControl">{{error}}</mat-error>-->
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Password</mat-label>
+      <input type="password" matInput ngModel name="password" #passwordControl="ngModel" required>
+      <!--    <mat-error *appValidationErrors="let error of passwordControl">{{error}}</mat-error>-->
+    </mat-form-field>
+
+    <button mat-flat-button color="primary">
+      Log In
+    </button>
+
+    <div class="secondary-option">
+      <button routerLink="/register" mat-flat-button>
+        or Register
+      </button>
+    </div>
+  </form>
+</div>

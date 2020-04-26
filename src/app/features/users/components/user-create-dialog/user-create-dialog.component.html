@@ -1,0 +1,49 @@
+<div mat-dialog-content>
+
+  <h1>Create user</h1>
+
+  <form class="form-fields" #form="ngForm" (ngSubmit)="submitForm(form.value)">
+
+    <mat-form-field>
+      <mat-label>Username</mat-label>
+      <input matInput name="username" ngModel required #username="ngModel">
+      <mat-error *appValidationErrors="let error of username">{{error}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Password</mat-label>
+      <input matInput name="password" type="password" ngModel required #password="ngModel">
+      <mat-error *appValidationErrors="let error of password">{{error}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Confirm password</mat-label>
+      <input matInput name="confirmPassword" type="password" ngModel required #confirmPassword="ngModel"
+             (ngModelChange)="changeConfirmPassword(password, confirmPassword)">
+      <mat-error *appValidationErrors="let error of confirmPassword">{{error}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>First name</mat-label>
+      <input matInput name="firstName" ngModel required #firstName="ngModel">
+      <mat-error *appValidationErrors="let error of firstName">{{error}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Last name</mat-label>
+      <input matInput name="lastName" ngModel required #lastName="ngModel">
+      <mat-error *appValidationErrors="let error of lastName">{{error}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input matInput name="email" type="email" ngModel required #email="ngModel">
+      <mat-error *appValidationErrors="let error of email">{{error}}</mat-error>
+    </mat-form-field>
+
+    <button type="submit" mat-button color="primary" [disabled]="!form.valid">
+      Save
+    </button>
+  </form>
+
+</div>

@@ -1,0 +1,13 @@
+.content-wrapper {
+  display: flex;
+  width: 100%;
+}
+
+.categories-tree {
+  border: 2px solid blue;
+}
+
+.ads-list {
+  border: 2px solid green;
+  margin-left: 5px;
+}
